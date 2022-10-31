@@ -4,7 +4,7 @@
 module Enumerable
   def my_each_with_index
     index = 0
-    self.my_each do |element|
+    my_each do |element|
       yield(element, index)
       index += 1
     end
@@ -19,7 +19,7 @@ class Array
   def my_each(&block)
     if block_given?
       i = 0
-      while i < self.length
+      while i < length
         block.call(self[i])
         i += 1
       end
