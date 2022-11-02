@@ -54,6 +54,13 @@ module Enumerable
     my_each { |element| result << yield(element) }
     result
   end
+
+  # alias for #reduce
+  def my_inject(initial_operand)
+    result = initial_operand
+    my_each { |element| result = yield(result, element) }
+    result
+  end
 end
 
 # You will first have to define my_each
